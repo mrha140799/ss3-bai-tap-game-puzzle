@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeGym</title>
+</head>
+<body>
+<table id="idTable">
+    <tr>
+        <th><input type="image" src="img/cat1.jpg" class="img" id="img1" onclick="Swap('img1');"></th>
+    </tr>
+
+    <tr>
+        <th><input type="image" src="img/monkey2.jpg" class="img" id="img2" onclick="Swap('img2');"></th>
+    </tr>
+
+    <tr>
+        <th><input type="image" src="img/panda3.jpg" class="img" id="img3" onclick="Swap('img3');"></th>
+    </tr>
+
+    <tr>
+        <th><input type="image" src="img/cat4.jpg" class="img" id="img4" onclick="Swap('img4');"></th>
+    </tr>
+    <tr>
+        <th><input type="image" src="img/panda5.jpg" class="img" id="img5" onclick="Swap('img5');"></th>
+    </tr>
+
+
+</table>
+
+<style>
+    table {
+        position: absolute;
+        border-color: #f316b0;
+    }
+    .img {
+        width: 600px;
+        height: 150px;
+        vertical-align: middle;
+    }
+</style>
+
+<script>
+    function Swap(element) {
+        var idTable = document.getElementById("idTable")
+        var img1 = document.getElementById("img1");
+        var img2 = document.getElementById("img2");
+        var img3 = document.getElementById("img3");
+        var img4 = document.getElementById("img4");
+        var img5 = document.getElementById("img5");
+        var imgSrc1 = [];
+        var imgSrc2 = [];
+        var imgSrc3 = [];
+        var imgSrc4 = [];
+        var imgSrc5 = [];
+        imgSrc1.push("img/cat1.jpg");
+        imgSrc2.push("img/cat2.jpg");
+        imgSrc3.push("img/cat3.jpg");
+        imgSrc4.push("img/cat4.jpg");
+        imgSrc5.push("img/cat5.jpg");
+        imgSrc1.push("img/monkey1.jpg");
+        imgSrc2.push("img/monkey2.jpg");
+        imgSrc3.push("img/monkey3.jpg");
+        imgSrc4.push("img/monkey4.jpg");
+        imgSrc5.push("img/monkey5.jpg");
+        imgSrc1.push("img/panda1.jpg");
+        imgSrc2.push("img/panda2.jpg");
+        imgSrc3.push("img/panda3.jpg");
+        imgSrc4.push("img/panda4.jpg");
+        imgSrc5.push("img/panda5.jpg");
+
+        switch (element) {
+            case 'img1' :
+                var random = parseInt(Math.random()*3);
+                var kiemtra1 = random;
+               img1.src = imgSrc1[random];
+               break;
+            case 'img2':
+                var random = parseInt(Math.random()*3);
+                var kiemtra2 = random;
+                img2.src = imgSrc2[random];
+                break;
+            case 'img3':
+                var random = parseInt(Math.random()*3);
+                var kiemtra3 = random;
+                img3.src = imgSrc3[random];
+                break;
+            case 'img4':
+                var random = parseInt(Math.random()*3);
+                var kiemtra4 = random;
+                img4.src = imgSrc4[random];
+                break;
+            case 'img5':
+                var random = parseInt(Math.random()*3);
+                var kiemtra5 = random;
+                img5.src = imgSrc5[random];
+                break;
+        }
+
+
+        if (kiemtra1 == kiemtra2 && kiemtra2 == kiemtra3 && kiemtra3 == kiemtra4 && kiemtra4 == kiemtra5) {
+            idTable.style.boxShadow = "5px 5px 5px 5px red";
+        }
+    }
+
+
+</script>
+</body>
+</html>
